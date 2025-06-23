@@ -20,6 +20,9 @@ An intelligent system that automatically captures, analyzes, and fixes Python co
 ![Image](https://github.com/user-attachments/assets/293853f5-b300-49e3-914b-5da32094380f)
 
 
+![Image](https://github.com/user-attachments/assets/302c2440-5cdb-46a5-9aaf-b8e77c0dc90b)
+
+
 ![Image](https://github.com/user-attachments/assets/49c949ff-c4ae-4f99-84d3-af82addbf8ba)
 
 ## 🚀 Quick Start
