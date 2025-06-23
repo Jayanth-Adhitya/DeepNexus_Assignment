@@ -238,20 +238,6 @@ for file in *.py; do
 done
 ```
 
-## 🤝 Contributing
-
-Feel free to contribute by:
-
-- Adding support for more programming languages
-- Improving error context extraction
-- Enhancing the web UI
-- Adding more safety checks
-- Optimizing LLM prompts
-
-## 📄 License
-
-This project is open source. Feel free to use, modify, and distribute as needed.
-
 ## 🆘 Troubleshooting
 
 ### Common Issues
@@ -294,4 +280,4 @@ Planned features:
 
 ---
 
-**Happy Debugging! 🐛→✨**
+**Happy Debugging! 🐛→✨**  
