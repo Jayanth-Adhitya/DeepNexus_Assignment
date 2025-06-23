@@ -11,6 +11,17 @@ An intelligent system that automatically captures, analyzes, and fixes Python co
 - **🎯 Multiple Interfaces**: CLI tool and Web UI for different workflows
 - **📝 Detailed Reporting**: Provides fix explanations and replication steps
 
+## Screenshots 
+
+
+![Image](https://github.com/user-attachments/assets/7d1be92c-896a-4296-b703-0ab3b556e181)
+
+
+![Image](https://github.com/user-attachments/assets/293853f5-b300-49e3-914b-5da32094380f)
+
+
+![Image](https://github.com/user-attachments/assets/49c949ff-c4ae-4f99-84d3-af82addbf8ba)
+
 ## 🚀 Quick Start
 
 ### 1. Installation
