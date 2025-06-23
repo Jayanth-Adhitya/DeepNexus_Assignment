@@ -147,6 +147,7 @@ def run_code():
         temp_file = temp_dir / f"{uuid.uuid4().hex}_{filename}"
         temp_file.write_text(code, encoding='utf-8')
         import subprocess
+        import re
         try:
             result = subprocess.run(
                 ['python', str(temp_file)],
@@ -154,10 +155,22 @@ def run_code():
             )
             output = result.stdout
             error = result.stderr
+            error_file = None
+            error_line = None
+            # Parse stacktrace for file and line
+            if error:
+                # Look for the last 'File ...' line
+                matches = list(re.finditer(r'File "([^"]+)", line (\d+)', error))
+                if matches:
+                    last = matches[-1]
+                    error_file = last.group(1)
+                    error_line = int(last.group(2))
             return jsonify({
                 'success': True,
                 'output': output,
-                'error': error
+                'error': error,
+                'error_file': error_file,
+                'error_line': error_line
             })
         finally:
             if temp_file.exists():
@@ -525,7 +538,11 @@ print(f"Average: {result}")
                 if (data.success) {
                     let output = data.output ? `<pre>${escapeHtml(data.output)}</pre>` : '';
                     let error = data.error ? `<pre style="color:#b00;">${escapeHtml(data.error)}</pre>` : '';
-                    runResults.innerHTML = `<h3>▶️ Code Output</h3>${output}${error}`;
+                    let errorLoc = '';
+                    if (data.error_file && data.error_line) {
+                        errorLoc = `<div style="color:#ff8c00; font-weight:bold;">Error in <span style="text-decoration:underline;">${escapeHtml(data.error_file)}</span> at line <span style="text-decoration:underline;">${data.error_line}</span></div>`;
+                    }
+                    runResults.innerHTML = `<h3>▶️ Code Output</h3>${output}${errorLoc}${error}`;
                 } else {
                     showRunError('Error: ' + data.error);
                 }
